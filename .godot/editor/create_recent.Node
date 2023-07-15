@@ -1,1 +1,10 @@
+TileMap
 Sprite2D
+TextureRect
+Label
+TextEdit
+HBoxContainer
+CheckBox
+TextureButton
+Node
+Button

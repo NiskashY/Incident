@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://baplf6rofo5er"]
+
+[ext_resource type="Texture2D" uid="uid://bgtontwd8m075" path="res://art/button-normal.png" id="1_1hhg8"]
+[ext_resource type="Texture2D" uid="uid://4q7k1nfy7de7" path="res://art/button-bright.png" id="2_cular"]
+[ext_resource type="Script" path="res://scenes/Textures/red_button.gd" id="3_2k8b4"]
+[ext_resource type="Texture2D" uid="uid://bqdqvkxgvdd52" path="res://art/button-glowing.png" id="3_m4s5g"]
+[ext_resource type="Texture2D" uid="uid://bsal1t3tw6j7l" path="res://art/button-dark.png" id="4_owdcl"]
+
+[node name="RedButton" type="TextureButton"]
+offset_left = -85.0
+offset_top = -86.0
+offset_right = 490.0
+offset_bottom = 494.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("1_1hhg8")
+texture_pressed = ExtResource("3_m4s5g")
+texture_hover = ExtResource("2_cular")
+texture_disabled = ExtResource("4_owdcl")
+texture_focused = ExtResource("3_m4s5g")
+script = ExtResource("3_2k8b4")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

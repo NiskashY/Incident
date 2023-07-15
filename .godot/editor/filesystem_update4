@@ -1,1 +1,5 @@
+res://scenes/Textures/red_button.tscn
+res://scenes/Menu/menu.tscn
 res://scenes/Menu/options.tscn
+res://scenes/Menu/menu.gd
+res://scenes/main_scene.tscn
