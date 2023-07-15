@@ -1,8 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://cv6ovqw6vjaff"]
+[gd_scene load_steps=6 format=3 uid="uid://cv6ovqw6vjaff"]
 
+[ext_resource type="Script" path="res://scenes/main_scene.gd" id="1_7if0o"]
 [ext_resource type="Texture2D" uid="uid://506axnpkyp41" path="res://art/main-room.png" id="1_wxxrf"]
+[ext_resource type="PackedScene" uid="uid://cvj8iwng8uk5e" path="res://scenes/Attributes/chair.tscn" id="2_xtefi"]
+[ext_resource type="PackedScene" uid="uid://r8jege1d34jn" path="res://scenes/Attributes/bed.tscn" id="4_cj0fa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pu2xy"]
+size = Vector2(109, 422)
 
 [node name="MainRoom" type="Node2D"]
+script = ExtResource("1_7if0o")
+metadata/_edit_horizontal_guides_ = []
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = 2.0
@@ -10,5 +18,24 @@ offset_right = 1149.0
 offset_bottom = 650.0
 texture = ExtResource("1_wxxrf")
 
-[node name="TileMap" type="TileMap" parent="."]
-format = 2
+[node name="Chair" parent="." instance=ExtResource("2_xtefi")]
+offset_left = 243.0
+offset_top = 388.0
+offset_right = 638.0
+offset_bottom = 968.0
+
+[node name="Bed" parent="." instance=ExtResource("4_cj0fa")]
+offset_left = 851.0
+offset_top = 393.0
+offset_right = 1466.0
+offset_bottom = 973.0
+scale = Vector2(0.45, 0.45)
+
+[node name="AreaChangeScene" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaChangeScene"]
+position = Vector2(51.5, 407)
+shape = SubResource("RectangleShape2D_pu2xy")
+
+[connection signal="mouse_entered" from="AreaChangeScene" to="." method="_on_area_change_scene_mouse_entered"]
+[connection signal="mouse_exited" from="AreaChangeScene" to="." method="_on_area_change_scene_mouse_exited"]

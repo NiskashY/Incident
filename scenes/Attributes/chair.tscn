@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvj8iwng8uk5e"]
+
+[ext_resource type="Texture2D" uid="uid://cvcfvllrole84" path="res://art/chair.png" id="1_qbrfe"]
+[ext_resource type="Script" path="res://scenes/Attributes/chair.gd" id="2_e8gur"]
+
+[node name="Chair" type="TextureButton"]
+offset_left = 520.0
+offset_top = 222.0
+offset_right = 915.0
+offset_bottom = 802.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("1_qbrfe")
+script = ExtResource("2_e8gur")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

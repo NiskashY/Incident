@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://r8jege1d34jn"]
+
+[ext_resource type="Texture2D" uid="uid://fsynf6em3v8u" path="res://art/bed.png" id="1_xwbr7"]
+[ext_resource type="Texture2D" uid="uid://cajuh8e5u7g1p" path="res://art/bed-outlining.png" id="2_01m6j"]
+
+[node name="Bed" type="TextureButton"]
+offset_left = 364.0
+offset_top = 169.0
+offset_right = 981.0
+offset_bottom = 749.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("1_xwbr7")
+texture_hover = ExtResource("2_01m6j")
