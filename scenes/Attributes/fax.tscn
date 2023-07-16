@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://cucoyyyraqa0h"]
+
+[ext_resource type="Script" path="res://scenes/Attributes/fax.gd" id="1_5vgwj"]
+[ext_resource type="Texture2D" uid="uid://dpkeywelpa2r4" path="res://art/fax.png" id="1_gyhs2"]
+[ext_resource type="Texture2D" uid="uid://bmhsrl1olvk76" path="res://art/fax-outlining.png" id="2_f7ak4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8us14"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_f7ak4")
+}],
+"loop": false,
+"name": &"hover",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gyhs2")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gyhs2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_f7ak4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_gyhs2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_f7ak4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_gyhs2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_f7ak4")
+}],
+"loop": false,
+"name": &"printing",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p7k2w"]
+size = Vector2(503, 396)
+
+[node name="Fax" type="Node2D"]
+script = ExtResource("1_5vgwj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8us14")
+animation = &"printing"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1.5, -2)
+shape = SubResource("RectangleShape2D_p7k2w")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

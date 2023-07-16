@@ -1,7 +1,9 @@
 extends Control
 
+var is_focus_exist: bool = false
+
 func _ready():
-	$VBoxContainer/StartLayout/StartButton.grab_focus()
+	pass
 
 
 func _on_start_button_pressed():
@@ -16,3 +18,15 @@ func _on_options_button_pressed():
 func _on_quit_button_pressed():
 	get_tree().quit()
 
+
+func _process(_delta):
+	if !is_focus_exist && (Input.is_action_pressed("ui_up") || \
+	   Input.is_action_pressed("ui_down")):
+		$VBoxContainer/StartLayout/StartButton.grab_focus()
+		is_focus_exist = true
+	elif is_focus_exist && Input.is_action_pressed("ESC"):
+		$VBoxContainer/StartLayout/StartButton.grab_focus()
+		$VBoxContainer/StartLayout/StartButton.release_focus()		
+		is_focus_exist = false
+		
+	

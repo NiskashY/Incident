@@ -1,41 +1,71 @@
-[gd_scene load_steps=6 format=3 uid="uid://cv6ovqw6vjaff"]
+[gd_scene load_steps=9 format=3 uid="uid://cv6ovqw6vjaff"]
 
 [ext_resource type="Script" path="res://scenes/main_scene.gd" id="1_7if0o"]
 [ext_resource type="Texture2D" uid="uid://506axnpkyp41" path="res://art/main-room.png" id="1_wxxrf"]
-[ext_resource type="PackedScene" uid="uid://cvj8iwng8uk5e" path="res://scenes/Attributes/chair.tscn" id="2_xtefi"]
+[ext_resource type="Script" path="res://scenes/Calendar.gd" id="4_625wo"]
 [ext_resource type="PackedScene" uid="uid://r8jege1d34jn" path="res://scenes/Attributes/bed.tscn" id="4_cj0fa"]
+[ext_resource type="PackedScene" uid="uid://cucoyyyraqa0h" path="res://scenes/Attributes/fax.tscn" id="4_of3w6"]
+[ext_resource type="Texture2D" uid="uid://bsal1t3tw6j7l" path="res://art/button-dark.png" id="4_y40k5"]
+[ext_resource type="PackedScene" uid="uid://dbdxerlb3rlht" path="res://scenes/UI/transitions.tscn" id="6_20uwh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pu2xy"]
-size = Vector2(109, 422)
+size = Vector2(138, 761)
 
 [node name="MainRoom" type="Node2D"]
 script = ExtResource("1_7if0o")
 metadata/_edit_horizontal_guides_ = []
 
 [node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
 offset_left = 2.0
-offset_right = 1149.0
-offset_bottom = 650.0
+offset_right = 1166.0
+offset_bottom = 658.0
+scale = Vector2(1.65, 1.65)
 texture = ExtResource("1_wxxrf")
 
-[node name="Chair" parent="." instance=ExtResource("2_xtefi")]
-offset_left = 243.0
-offset_top = 388.0
-offset_right = 638.0
-offset_bottom = 968.0
-
 [node name="Bed" parent="." instance=ExtResource("4_cj0fa")]
-offset_left = 851.0
-offset_top = 393.0
-offset_right = 1466.0
-offset_bottom = 973.0
-scale = Vector2(0.45, 0.45)
+offset_left = 1303.0
+offset_top = 617.0
+offset_right = 1918.0
+offset_bottom = 1197.0
+scale = Vector2(1, 1)
 
 [node name="AreaChangeScene" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaChangeScene"]
-position = Vector2(51.5, 407)
+position = Vector2(66, 665.5)
 shape = SubResource("RectangleShape2D_pu2xy")
 
+[node name="Calendar" type="Node2D" parent="."]
+script = ExtResource("4_625wo")
+
+[node name="Sprite2D" type="Sprite2D" parent="Calendar"]
+position = Vector2(539, 441)
+scale = Vector2(0.237826, 0.23362)
+texture = ExtResource("4_y40k5")
+
+[node name="Label" type="Label" parent="Calendar"]
+offset_left = 507.0
+offset_top = 409.0
+offset_right = 572.0
+offset_bottom = 473.0
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Fax" parent="." instance=ExtResource("4_of3w6")]
+position = Vector2(800, 627)
+scale = Vector2(0.4, 0.4)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Transitions" parent="CanvasLayer" instance=ExtResource("6_20uwh")]
+offset_left = 507.0
+offset_top = 413.0
+offset_right = -1349.0
+offset_bottom = -608.0
+
+[connection signal="day_passed" from="Bed" to="Calendar" method="_on_bed_day_passed"]
 [connection signal="mouse_entered" from="AreaChangeScene" to="." method="_on_area_change_scene_mouse_entered"]
 [connection signal="mouse_exited" from="AreaChangeScene" to="." method="_on_area_change_scene_mouse_exited"]
+[connection signal="end_of_month" from="Calendar" to="." method="_on_calendar_end_of_month"]
