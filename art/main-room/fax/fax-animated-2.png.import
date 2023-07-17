@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://506axnpkyp41"
-path="res://.godot/imported/main-room.png-b70bc5ace1eadf0c778baf5c37435213.ctex"
+uid="uid://clq47ua6ot4cq"
+path="res://.godot/imported/fax-animated-2.png-72d7c3d4230a3c5408cfe247508a7731.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/main-room.png"
-dest_files=["res://.godot/imported/main-room.png-b70bc5ace1eadf0c778baf5c37435213.ctex"]
+source_file="res://art/main-room/fax/fax-animated-2.png"
+dest_files=["res://.godot/imported/fax-animated-2.png-72d7c3d4230a3c5408cfe247508a7731.ctex"]
 
 [params]
 

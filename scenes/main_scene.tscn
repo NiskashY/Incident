@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=3 uid="uid://cv6ovqw6vjaff"]
 
 [ext_resource type="Script" path="res://scenes/main_scene.gd" id="1_7if0o"]
-[ext_resource type="Texture2D" uid="uid://506axnpkyp41" path="res://art/main-room.png" id="1_wxxrf"]
+[ext_resource type="Texture2D" uid="uid://506axnpkyp41" path="res://art/main-room/main-room.png" id="2_t7pip"]
 [ext_resource type="Script" path="res://scenes/Calendar.gd" id="4_625wo"]
 [ext_resource type="PackedScene" uid="uid://r8jege1d34jn" path="res://scenes/Attributes/bed.tscn" id="4_cj0fa"]
 [ext_resource type="PackedScene" uid="uid://cucoyyyraqa0h" path="res://scenes/Attributes/fax.tscn" id="4_of3w6"]
 [ext_resource type="Texture2D" uid="uid://bsal1t3tw6j7l" path="res://art/button-dark.png" id="4_y40k5"]
-[ext_resource type="PackedScene" uid="uid://dbdxerlb3rlht" path="res://scenes/UI/transitions.tscn" id="6_20uwh"]
+[ext_resource type="PackedScene" uid="uid://1divvd4fr6d3" path="res://scenes/UI/HUD.tscn" id="8_mwqjd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pu2xy"]
 size = Vector2(138, 761)
@@ -21,7 +21,7 @@ offset_left = 2.0
 offset_right = 1166.0
 offset_bottom = 658.0
 scale = Vector2(1.65, 1.65)
-texture = ExtResource("1_wxxrf")
+texture = ExtResource("2_t7pip")
 
 [node name="Bed" parent="." instance=ExtResource("4_cj0fa")]
 offset_left = 1303.0
@@ -53,19 +53,17 @@ text = "1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Timer" type="Timer" parent="Calendar"]
+wait_time = 3.0
+one_shot = true
+
 [node name="Fax" parent="." instance=ExtResource("4_of3w6")]
 position = Vector2(800, 627)
 scale = Vector2(0.4, 0.4)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="HUD" parent="." instance=ExtResource("8_mwqjd")]
 
-[node name="Transitions" parent="CanvasLayer" instance=ExtResource("6_20uwh")]
-offset_left = 507.0
-offset_top = 413.0
-offset_right = -1349.0
-offset_bottom = -608.0
-
-[connection signal="day_passed" from="Bed" to="Calendar" method="_on_bed_day_passed"]
+[connection signal="go_to_sleep" from="Bed" to="Calendar" method="_on_bed_go_to_sleep"]
 [connection signal="mouse_entered" from="AreaChangeScene" to="." method="_on_area_change_scene_mouse_entered"]
 [connection signal="mouse_exited" from="AreaChangeScene" to="." method="_on_area_change_scene_mouse_exited"]
 [connection signal="end_of_month" from="Calendar" to="." method="_on_calendar_end_of_month"]

@@ -1,6 +1,6 @@
 extends TextureButton
 
-signal day_passed
+signal go_to_sleep
 
 func _on_pressed():
-	emit_signal("day_passed")	
+	emit_signal("go_to_sleep")	

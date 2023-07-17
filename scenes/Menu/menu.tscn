@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/Menu/menu.gd" id="1_tos7c"]
 [ext_resource type="PackedScene" uid="uid://baplf6rofo5er" path="res://scenes/Textures/red_button.tscn" id="2_m37sx"]
-[ext_resource type="Texture2D" uid="uid://506axnpkyp41" path="res://art/main-room.png" id="2_y5vfa"]
+[ext_resource type="Texture2D" uid="uid://506axnpkyp41" path="res://art/main-room/main-room.png" id="2_t8tym"]
 
 [sub_resource type="Theme" id="Theme_kqmd3"]
 /colors/background_color = Color(1, 1, 1, 1)
@@ -22,13 +22,13 @@ theme = SubResource("Theme_kqmd3")
 script = ExtResource("1_tos7c")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-modulate = Color(0.729087, 0.738641, 0.538876, 1)
+modulate = Color(0.729412, 0.737255, 0.537255, 1)
 layout_mode = 0
 offset_left = -77.0
 offset_top = -26.0
 offset_right = 1845.0
 offset_bottom = 1054.0
-texture = ExtResource("2_y5vfa")
+texture = ExtResource("2_t8tym")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1

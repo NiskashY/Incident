@@ -1,14 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://cucoyyyraqa0h"]
+[gd_scene load_steps=11 format=3 uid="uid://cucoyyyraqa0h"]
 
 [ext_resource type="Script" path="res://scenes/Attributes/fax.gd" id="1_5vgwj"]
-[ext_resource type="Texture2D" uid="uid://dpkeywelpa2r4" path="res://art/fax.png" id="1_gyhs2"]
-[ext_resource type="Texture2D" uid="uid://bmhsrl1olvk76" path="res://art/fax-outlining.png" id="2_f7ak4"]
+[ext_resource type="Texture2D" uid="uid://48ca44qaofcn" path="res://art/main-room/fax/fax-highlighted.png" id="2_wucqi"]
+[ext_resource type="Texture2D" uid="uid://boxx65auwwg6b" path="res://art/main-room/fax/fax-animated-0.png" id="3_xmthd"]
+[ext_resource type="Texture2D" uid="uid://b8xnxfrp7x2fw" path="res://art/main-room/fax/fax-animated-1.png" id="4_bvjei"]
+[ext_resource type="Texture2D" uid="uid://clq47ua6ot4cq" path="res://art/main-room/fax/fax-animated-2.png" id="5_pdf5b"]
+[ext_resource type="Texture2D" uid="uid://c2fnpl8x2mgok" path="res://art/main-room/fax/fax-animated-3.png" id="6_ard6d"]
+[ext_resource type="Texture2D" uid="uid://cys60h75m560p" path="res://art/main-room/fax/fax-animated-4.png" id="7_grfhf"]
+[ext_resource type="Texture2D" uid="uid://bo0oad70odo7n" path="res://art/main-room/fax/fax-printed-outlining.png" id="8_hfj63"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8us14"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_f7ak4")
+"texture": ExtResource("2_wucqi")
 }],
 "loop": false,
 "name": &"hover",
@@ -16,7 +21,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_gyhs2")
+"texture": ExtResource("3_xmthd")
 }],
 "loop": false,
 "name": &"idle",
@@ -24,22 +29,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_gyhs2")
+"texture": ExtResource("3_xmthd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_f7ak4")
+"texture": ExtResource("4_bvjei")
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_gyhs2")
+"texture": ExtResource("5_pdf5b")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_f7ak4")
+"texture": ExtResource("6_ard6d")
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_gyhs2")
+"texture": ExtResource("7_grfhf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_f7ak4")
+"texture": ExtResource("8_hfj63")
 }],
 "loop": false,
 "name": &"printing",
@@ -53,6 +58,8 @@ size = Vector2(503, 396)
 script = ExtResource("1_5vgwj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-4.5, 0)
+scale = Vector2(1.01271, 1)
 sprite_frames = SubResource("SpriteFrames_8us14")
 animation = &"printing"
 

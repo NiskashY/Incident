@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fsynf6em3v8u"
-path="res://.godot/imported/bed.png-cf6b71baf861502d83a71d63295aa643.ctex"
+uid="uid://boxx65auwwg6b"
+path="res://.godot/imported/fax-animated-0.png-be7324a4d2b7691c65faf34b3cf78b6a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/bed.png"
-dest_files=["res://.godot/imported/bed.png-cf6b71baf861502d83a71d63295aa643.ctex"]
+source_file="res://art/main-room/fax/fax-animated-0.png"
+dest_files=["res://.godot/imported/fax-animated-0.png-be7324a4d2b7691c65faf34b3cf78b6a.ctex"]
 
 [params]
 

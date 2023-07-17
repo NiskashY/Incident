@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmhsrl1olvk76"
-path="res://.godot/imported/fax-outlining.png-eaff98788efb1fcc30daa262adf47d37.ctex"
+uid="uid://bo0oad70odo7n"
+path="res://.godot/imported/fax-printed-outlining.png-267e99d451df40708607000828f78280.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/fax-outlining.png"
-dest_files=["res://.godot/imported/fax-outlining.png-eaff98788efb1fcc30daa262adf47d37.ctex"]
+source_file="res://art/main-room/fax/fax-printed-outlining.png"
+dest_files=["res://.godot/imported/fax-printed-outlining.png-267e99d451df40708607000828f78280.ctex"]
 
 [params]
 
