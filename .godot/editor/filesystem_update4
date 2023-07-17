@@ -1,9 +1,0 @@
-res://scenes/UI/HUD.tscn
-res://scenes/Attributes/bed.gd
-res://scenes/Calendar.gd
-res://scenes/Menu/menu.tscn
-res://scenes/main_scene.tscn
-res://scenes/UI/transitions.tscn
-res://scenes/Attributes/bed.tscn
-res://scenes/Attributes/fax.tscn
-res://scenes/UI/HUD.gd

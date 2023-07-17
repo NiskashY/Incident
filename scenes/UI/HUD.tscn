@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://1divvd4fr6d3"]
+[gd_scene load_steps=6 format=3 uid="uid://1divvd4fr6d3"]
 
 [ext_resource type="Texture2D" uid="uid://cppcotww27rcl" path="res://art/Screenshot from 2023-07-17 15-18-14.png" id="1_4djyv"]
 [ext_resource type="Script" path="res://scenes/UI/HUD.gd" id="1_n6tnm"]
-[ext_resource type="Texture2D" uid="uid://ct2y34qe13srm" path="res://art/image.png" id="3_dxbdy"]
 [ext_resource type="PackedScene" uid="uid://baplf6rofo5er" path="res://scenes/Textures/red_button.tscn" id="3_sf1hx"]
 [ext_resource type="PackedScene" uid="uid://dbdxerlb3rlht" path="res://scenes/UI/transitions.tscn" id="4_2864p"]
 
@@ -14,11 +13,10 @@ script = ExtResource("1_n6tnm")
 
 [node name="CanvasModulate" type="Node2D" parent="."]
 
-[node name="TextureRect" type="TextureRect" parent="CanvasModulate"]
+[node name="BackgroundImage" type="TextureRect" parent="CanvasModulate"]
 modulate = Color(0.220141, 0.21947, 4.81308e-08, 1)
 offset_right = 1917.0
 offset_bottom = 1077.0
-texture = ExtResource("3_dxbdy")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasModulate"]
 offset_left = 713.0
@@ -74,11 +72,9 @@ texture = ExtResource("1_4djyv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
 position = Vector2(0, 3.05176e-05)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_qutsy")
 
 [node name="Transitions" parent="." instance=ExtResource("4_2864p")]
-visible = false
 offset_left = 677.0
 offset_top = 348.0
 offset_right = -856.0

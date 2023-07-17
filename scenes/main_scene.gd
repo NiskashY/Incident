@@ -6,7 +6,7 @@ var is_mouse_in_change_scene_area: bool = false
 func _process(_delta):
 	if is_mouse_in_change_scene_area:
 		if Input.is_action_pressed("LMB"):
-			get_tree().quit()
+			get_tree().change_scene_to_file("res://scenes/test_scene.tscn")
 
 # --------------------SIGNALS------------------------
 func _on_area_change_scene_mouse_entered():

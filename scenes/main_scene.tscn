@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cv6ovqw6vjaff"]
+[gd_scene load_steps=8 format=3 uid="uid://cv6ovqw6vjaff"]
 
 [ext_resource type="Script" path="res://scenes/main_scene.gd" id="1_7if0o"]
 [ext_resource type="Texture2D" uid="uid://506axnpkyp41" path="res://art/main-room/main-room.png" id="2_t7pip"]
 [ext_resource type="Script" path="res://scenes/Calendar.gd" id="4_625wo"]
 [ext_resource type="PackedScene" uid="uid://r8jege1d34jn" path="res://scenes/Attributes/bed.tscn" id="4_cj0fa"]
 [ext_resource type="PackedScene" uid="uid://cucoyyyraqa0h" path="res://scenes/Attributes/fax.tscn" id="4_of3w6"]
-[ext_resource type="Texture2D" uid="uid://bsal1t3tw6j7l" path="res://art/button-dark.png" id="4_y40k5"]
 [ext_resource type="PackedScene" uid="uid://1divvd4fr6d3" path="res://scenes/UI/HUD.tscn" id="8_mwqjd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pu2xy"]
@@ -15,7 +14,7 @@ size = Vector2(138, 761)
 script = ExtResource("1_7if0o")
 metadata/_edit_horizontal_guides_ = []
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="BackgroundImage" type="TextureRect" parent="."]
 texture_filter = 1
 offset_left = 2.0
 offset_right = 1166.0
@@ -39,16 +38,14 @@ shape = SubResource("RectangleShape2D_pu2xy")
 [node name="Calendar" type="Node2D" parent="."]
 script = ExtResource("4_625wo")
 
-[node name="Sprite2D" type="Sprite2D" parent="Calendar"]
-position = Vector2(539, 441)
-scale = Vector2(0.237826, 0.23362)
-texture = ExtResource("4_y40k5")
-
 [node name="Label" type="Label" parent="Calendar"]
-offset_left = 507.0
-offset_top = 409.0
-offset_right = 572.0
-offset_bottom = 473.0
+offset_left = 485.0
+offset_top = 296.0
+offset_right = 577.0
+offset_bottom = 416.0
+theme_override_colors/font_color = Color(0.203922, 0.313726, 0.309804, 1)
+theme_override_colors/font_outline_color = Color(0.12549, 0.247059, 0.25098, 1)
+theme_override_font_sizes/font_size = 36
 text = "1"
 horizontal_alignment = 1
 vertical_alignment = 1

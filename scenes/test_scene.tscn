@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3yubh6edd2mu"]
+
+[ext_resource type="Texture2D" uid="uid://cvcfvllrole84" path="res://art/main-room/chair.png" id="1_aiopr"]
+[ext_resource type="PackedScene" uid="uid://1divvd4fr6d3" path="res://scenes/UI/HUD.tscn" id="2_wep7f"]
+
+[node name="TestScene" type="Node2D"]
+
+[node name="BackgroundImage" type="TextureRect" parent="."]
+offset_left = 11.0
+offset_top = -5.0
+offset_right = 1917.0
+offset_bottom = 1085.0
+texture = ExtResource("1_aiopr")
+
+[node name="HUD" parent="." instance=ExtResource("2_wep7f")]
