@@ -18,9 +18,6 @@ offset_right = 1918.0
 offset_bottom = 1082.0
 texture = ExtResource("1_kbltu")
 
-[node name="HUD" parent="." instance=ExtResource("2_6yac1")]
-visible = false
-
 [node name="ExitArea" type="Area2D" parent="."]
 position = Vector2(1832, 733)
 
@@ -34,6 +31,9 @@ position = Vector2(828, 515)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MonitorArea"]
 position = Vector2(162, 107)
 shape = SubResource("RectangleShape2D_g3w25")
+
+[node name="HUD" parent="." instance=ExtResource("2_6yac1")]
+visible = false
 
 [connection signal="mouse_entered" from="ExitArea" to="." method="_on_exit_area_mouse_entered"]
 [connection signal="mouse_exited" from="ExitArea" to="." method="_on_exit_area_mouse_exited"]

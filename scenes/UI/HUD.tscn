@@ -26,13 +26,13 @@ offset_right = 1930.0
 offset_bottom = 2048.0
 scale = Vector2(0.3, 0.3)
 
-[node name="SomethingLayout" type="HBoxContainer" parent="CanvasModulate/VBoxContainer"]
+[node name="InventoryLayout" type="HBoxContainer" parent="CanvasModulate/VBoxContainer"]
 layout_mode = 2
 
-[node name="RedButton" parent="CanvasModulate/VBoxContainer/SomethingLayout" instance=ExtResource("3_sf1hx")]
+[node name="InventoryButton" parent="CanvasModulate/VBoxContainer/InventoryLayout" instance=ExtResource("3_sf1hx")]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasModulate/VBoxContainer/SomethingLayout"]
+[node name="Label" type="Label" parent="CanvasModulate/VBoxContainer/InventoryLayout"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 137
 text = "Inventory"
@@ -81,6 +81,7 @@ offset_top = 348.0
 offset_right = -1243.0
 offset_bottom = -726.0
 
+[connection signal="pressed" from="CanvasModulate/VBoxContainer/InventoryLayout/InventoryButton" to="." method="_on_inventory_button_pressed"]
 [connection signal="pressed" from="CanvasModulate/VBoxContainer/QuitLayout/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="mouse_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Sprite2D/Area2D" to="." method="_on_area_2d_mouse_exited"]

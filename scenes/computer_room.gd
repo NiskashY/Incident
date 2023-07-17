@@ -6,6 +6,9 @@ var is_in_monitor_area: bool = false
 
 # -------------------------SIGNALS------------------------------
 
+func _ready():
+	$HUD.visible = true
+
 func _on_exit_area_mouse_entered():
 	is_in_exit_area = true
 

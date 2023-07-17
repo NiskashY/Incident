@@ -3,7 +3,11 @@ extends CanvasLayer
 class_name HUD
 
 @onready var background: TextureRect = $CanvasModulate/BackgroundImage
-@onready var focus_layout = $CanvasModulate/VBoxContainer/SomethingLayout/RedButton
+@onready var focus_layout = $CanvasModulate/VBoxContainer/InventoryLayout/InventoryButton
+
+var inventory_scene = preload("res://scenes/Menu/inventory.tscn")
+var inventory = null
+
 var is_focus_exist: bool = false
 var is_modulate: bool = false
 var is_entered: bool = false
@@ -12,6 +16,8 @@ var is_entered: bool = false
 # -------------------------------SIGNALS------------------------
 
 func _ready():
+	inventory = inventory_scene.instantiate()
+	inventory.connect("inventory_closed", _on_inventory_close_button_pressed)
 	$CanvasModulate.set_visible(is_modulate)
 
 func _on_area_2d_mouse_entered():
@@ -50,6 +56,7 @@ func is_arrow_keys_pressed() -> bool:
 func menu_button_clicked():
 	if $CanvasModulate/Timer.is_stopped():
 		is_modulate = !is_modulate		
+		
 		$CanvasModulate/Timer.start()
 		create_menu_background()
 
@@ -71,5 +78,14 @@ func create_menu_background():
 	$CanvasModulate.set_visible(is_modulate)
 
 
+func _on_inventory_button_pressed():
+	$CanvasModulate/VBoxContainer.visible = false
+	$CanvasModulate.add_child(inventory)
+	pass
+
 func _on_quit_button_pressed():
 	get_tree().quit()
+
+func _on_inventory_close_button_pressed():
+	$CanvasModulate.remove_child(inventory)
+	$CanvasModulate/VBoxContainer.visible = true

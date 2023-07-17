@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cpxoru0hfbv"]
+[gd_scene load_steps=7 format=3 uid="uid://cpxoru0hfbv"]
 
 [ext_resource type="Texture2D" uid="uid://ciuiso8sy8l24" path="res://art/Inventory/default_inventory_background.png" id="1_05a25"]
 [ext_resource type="Script" path="res://scenes/Menu/inventory.gd" id="1_c1m0p"]
 [ext_resource type="Texture2D" uid="uid://q7wketg8ymuu" path="res://art/Inventory/slot.png" id="2_uxydk"]
 [ext_resource type="Script" path="res://scenes/Menu/Slot.gd" id="3_qvxc1"]
+[ext_resource type="PackedScene" uid="uid://baplf6rofo5er" path="res://scenes/Textures/red_button.tscn" id="5_ba4a3"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aq4cs"]
 texture = ExtResource("2_uxydk")
@@ -23,7 +24,9 @@ offset_left = 373.0
 offset_top = 260.0
 offset_right = 1610.0
 offset_bottom = 927.0
-columns = 8
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 20
+columns = 7
 
 [node name="Slot" type="Panel" parent="GridContainer"]
 custom_minimum_size = Vector2(150, 150)
@@ -193,26 +196,10 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_aq4cs")
 script = ExtResource("3_qvxc1")
 
-[node name="Slot29" type="Panel" parent="GridContainer"]
-custom_minimum_size = Vector2(150, 150)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_aq4cs")
-script = ExtResource("3_qvxc1")
+[node name="CloseButton" parent="." instance=ExtResource("5_ba4a3")]
+offset_left = 324.0
+offset_top = 89.0
+offset_right = 899.0
+offset_bottom = 669.0
 
-[node name="Slot30" type="Panel" parent="GridContainer"]
-custom_minimum_size = Vector2(150, 150)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_aq4cs")
-script = ExtResource("3_qvxc1")
-
-[node name="Slot31" type="Panel" parent="GridContainer"]
-custom_minimum_size = Vector2(150, 150)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_aq4cs")
-script = ExtResource("3_qvxc1")
-
-[node name="Slot32" type="Panel" parent="GridContainer"]
-custom_minimum_size = Vector2(150, 150)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_aq4cs")
-script = ExtResource("3_qvxc1")
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]

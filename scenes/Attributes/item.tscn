@@ -10,6 +10,7 @@ scale = Vector2(0.3, 0.3)
 custom_minimum_size = Vector2(150, 150)
 offset_right = 395.0
 offset_bottom = 580.0
+scale = Vector2(0.5, 0.5)
 mouse_filter = 2
 texture = ExtResource("1_6i16o")
 stretch_mode = 2
