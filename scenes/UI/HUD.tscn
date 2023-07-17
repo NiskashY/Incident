@@ -17,6 +17,7 @@ script = ExtResource("1_n6tnm")
 modulate = Color(0.220141, 0.21947, 4.81308e-08, 1)
 offset_right = 1917.0
 offset_bottom = 1077.0
+metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasModulate"]
 offset_left = 713.0
@@ -36,25 +37,25 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 137
 text = "Inventory"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasModulate/VBoxContainer"]
+[node name="OptionsLayout" type="HBoxContainer" parent="CanvasModulate/VBoxContainer"]
 layout_mode = 2
 
-[node name="RedButton" parent="CanvasModulate/VBoxContainer/HBoxContainer2" instance=ExtResource("3_sf1hx")]
+[node name="OptionsButton" parent="CanvasModulate/VBoxContainer/OptionsLayout" instance=ExtResource("3_sf1hx")]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasModulate/VBoxContainer/HBoxContainer2"]
+[node name="Label" type="Label" parent="CanvasModulate/VBoxContainer/OptionsLayout"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 137
 text = "Options
 "
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasModulate/VBoxContainer"]
+[node name="QuitLayout" type="HBoxContainer" parent="CanvasModulate/VBoxContainer"]
 layout_mode = 2
 
-[node name="RedButton" parent="CanvasModulate/VBoxContainer/HBoxContainer3" instance=ExtResource("3_sf1hx")]
+[node name="QuitButton" parent="CanvasModulate/VBoxContainer/QuitLayout" instance=ExtResource("3_sf1hx")]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasModulate/VBoxContainer/HBoxContainer3"]
+[node name="Label" type="Label" parent="CanvasModulate/VBoxContainer/QuitLayout"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 137
 text = "Quit"
@@ -77,8 +78,9 @@ shape = SubResource("RectangleShape2D_qutsy")
 [node name="Transitions" parent="." instance=ExtResource("4_2864p")]
 offset_left = 677.0
 offset_top = 348.0
-offset_right = -856.0
-offset_bottom = -501.0
+offset_right = -1243.0
+offset_bottom = -726.0
 
+[connection signal="pressed" from="CanvasModulate/VBoxContainer/QuitLayout/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="mouse_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Sprite2D/Area2D" to="." method="_on_area_2d_mouse_exited"]

@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2mm5xk8eoy5v"]
+
+[ext_resource type="Texture2D" uid="uid://cvcfvllrole84" path="res://art/main-room/chair.png" id="1_6i16o"]
+
+[node name="Item" type="Node2D"]
+z_index = 1
+scale = Vector2(0.3, 0.3)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(150, 150)
+offset_right = 395.0
+offset_bottom = 580.0
+mouse_filter = 2
+texture = ExtResource("1_6i16o")
+stretch_mode = 2

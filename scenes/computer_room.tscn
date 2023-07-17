@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://b8mfxc2atevsk"]
+
+[ext_resource type="Texture2D" uid="uid://b7ru2cwyb2hkw" path="res://art/main-room/computer-room/background-image.png" id="1_kbltu"]
+[ext_resource type="Script" path="res://scenes/computer_room.gd" id="1_tn8m7"]
+[ext_resource type="PackedScene" uid="uid://1divvd4fr6d3" path="res://scenes/UI/HUD.tscn" id="2_6yac1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57std"]
+size = Vector2(149, 684)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g3w25"]
+size = Vector2(338, 242)
+
+[node name="ComputerRoom" type="Node2D"]
+script = ExtResource("1_tn8m7")
+
+[node name="BackgroundImage" type="TextureRect" parent="."]
+offset_right = 1918.0
+offset_bottom = 1082.0
+texture = ExtResource("1_kbltu")
+
+[node name="HUD" parent="." instance=ExtResource("2_6yac1")]
+visible = false
+
+[node name="ExitArea" type="Area2D" parent="."]
+position = Vector2(1832, 733)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitArea"]
+position = Vector2(15.5, 1)
+shape = SubResource("RectangleShape2D_57std")
+
+[node name="MonitorArea" type="Area2D" parent="."]
+position = Vector2(828, 515)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MonitorArea"]
+position = Vector2(162, 107)
+shape = SubResource("RectangleShape2D_g3w25")
+
+[connection signal="mouse_entered" from="ExitArea" to="." method="_on_exit_area_mouse_entered"]
+[connection signal="mouse_exited" from="ExitArea" to="." method="_on_exit_area_mouse_exited"]
+[connection signal="mouse_entered" from="MonitorArea" to="." method="_on_monitor_area_mouse_entered"]
+[connection signal="mouse_exited" from="MonitorArea" to="." method="_on_monitor_area_mouse_exited"]
