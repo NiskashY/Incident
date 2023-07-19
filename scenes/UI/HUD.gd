@@ -53,9 +53,22 @@ func is_arrow_keys_pressed() -> bool:
 		   Input.is_action_pressed("ui_down")
 
 
+func find_colision_shape(node, is_disable: bool):
+	if node is CollisionShape2D:
+		node.disabled = is_disable
+		return
+	for next_node in node.get_children():
+		find_colision_shape(next_node, is_disable)
+
 func menu_button_clicked():
 	if $CanvasModulate/Timer.is_stopped():
 		is_modulate = !is_modulate		
+		
+		# TODO: this is needed to fix problem of active area2d
+		# 		if we click on them -> they react even if our hud is displayed
+		# 		this occuring because the HUD is a CanvasLayer
+		find_colision_shape(get_tree().get_root(), is_modulate)
+		$Sprite2D/Area2D/CollisionShape2D.disabled = false
 		
 		$CanvasModulate/Timer.start()
 		create_menu_background()
@@ -75,17 +88,19 @@ func create_menu_background():
 	var current_background: TextureRect = get_node(get_background_image_path())
 	assert(current_background != null)
 	background.set_texture(current_background.get_texture())
+	# Tells that inventory is still open
+	if !is_modulate and $CanvasModulate/VBoxContainer.visible == false:
+		_on_inventory_close_button_pressed()
 	$CanvasModulate.set_visible(is_modulate)
-
 
 func _on_inventory_button_pressed():
 	$CanvasModulate/VBoxContainer.visible = false
 	$CanvasModulate.add_child(inventory)
-	pass
+
+func _on_inventory_close_button_pressed():
+	inventory.before_remove()
+	$CanvasModulate.remove_child(inventory)
+	$CanvasModulate/VBoxContainer.visible = true
 
 func _on_quit_button_pressed():
 	get_tree().quit()
-
-func _on_inventory_close_button_pressed():
-	$CanvasModulate.remove_child(inventory)
-	$CanvasModulate/VBoxContainer.visible = true

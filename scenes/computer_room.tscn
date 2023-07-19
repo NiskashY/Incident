@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://b8mfxc2atevsk"]
 
-[ext_resource type="Texture2D" uid="uid://b7ru2cwyb2hkw" path="res://art/main-room/computer-room/background-image.png" id="1_kbltu"]
 [ext_resource type="Script" path="res://scenes/computer_room.gd" id="1_tn8m7"]
 [ext_resource type="PackedScene" uid="uid://1divvd4fr6d3" path="res://scenes/UI/HUD.tscn" id="2_6yac1"]
+[ext_resource type="Texture2D" uid="uid://c4fxp1jfu5prs" path="res://art/computer-room/background-image.png" id="2_focbd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_57std"]
 size = Vector2(149, 684)
@@ -16,7 +16,7 @@ script = ExtResource("1_tn8m7")
 [node name="BackgroundImage" type="TextureRect" parent="."]
 offset_right = 1918.0
 offset_bottom = 1082.0
-texture = ExtResource("1_kbltu")
+texture = ExtResource("2_focbd")
 
 [node name="ExitArea" type="Area2D" parent="."]
 position = Vector2(1832, 733)
