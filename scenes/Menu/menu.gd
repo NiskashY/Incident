@@ -28,5 +28,11 @@ func _process(_delta):
 		$VBoxContainer/StartLayout/StartButton.grab_focus()
 		$VBoxContainer/StartLayout/StartButton.release_focus()		
 		is_focus_exist = false
+	elif Input.is_action_pressed("one_key"):
+		_on_start_button_pressed()
+	elif Input.is_action_pressed("two_key"):
+		_on_options_button_pressed()
+	elif Input.is_action_pressed("three_key"):
+		_on_quit_button_pressed()
 		
 	
